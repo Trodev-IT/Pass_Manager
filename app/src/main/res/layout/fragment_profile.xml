@@ -67,10 +67,11 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/nameET"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="Zobayer Hasan Nayem"
+                                android:text="User Name"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
