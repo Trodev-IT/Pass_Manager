@@ -17,5 +17,7 @@ public class BrowserOnlineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser_online);
 
+        getSupportActionBar().setTitle("Online Saver");
+
     }
 }
