@@ -1,21 +1,19 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.Objects;
+import com.trodev.mypasswordgenerator.R;
+import com.trodev.mypasswordgenerator.fragments.HomeFragment;
+import com.trodev.mypasswordgenerator.fragments.LockerFragment;
+import com.trodev.mypasswordgenerator.fragments.MackerFragment;
+import com.trodev.mypasswordgenerator.fragments.ProfileFragment;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;

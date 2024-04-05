@@ -17,7 +17,6 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.trodev.mypasswordgenerator.DashboardActivity;
 import com.trodev.mypasswordgenerator.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {

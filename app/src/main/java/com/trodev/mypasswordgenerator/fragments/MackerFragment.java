@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.fragments;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
 
@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.LoginActivity;
 import com.trodev.mypasswordgenerator.models.database.DatabaseHelper;
 import com.trodev.mypasswordgenerator.models.database.SavePassword;

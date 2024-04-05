@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.LoginActivity;
 
 public class ProfileFragment extends Fragment {
