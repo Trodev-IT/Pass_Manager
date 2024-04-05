@@ -14,17 +14,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOfflineActivity;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineActivity;
+import com.trodev.mypasswordgenerator.activity.payment.PaymentOfflineActivity;
+import com.trodev.mypasswordgenerator.activity.payment.PaymentOnlineActivity;
 
 public class HomeFragment extends Fragment {
 
-    CardView browser_btn;
+    CardView browser_btn,social_btn,payment_btn;
 
     public HomeFragment() {
 
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         browser_btn = view.findViewById(R.id.browser_btn);
+        social_btn=view.findViewById(R.id.social_btn);
+        payment_btn=view.findViewById(R.id.payment_btn);
         browser_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,8 +49,108 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        social_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showSocialDialog();
+
+            }
+        });
+
+        payment_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPaymentDialog();
+            }
+        });
+
 
         return view;
+    }
+
+    private void showPaymentDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottomsheetlayout);
+
+        LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
+        LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
+
+
+        layoutOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), PaymentOnlineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        layoutOffline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), PaymentOfflineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+    }
+
+
+
+    private void showSocialDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottomsheetlayout);
+
+        LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
+        LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
+
+
+        layoutOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), BrowserOnlineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        layoutOffline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), BrowserOfflineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
     }
 
 

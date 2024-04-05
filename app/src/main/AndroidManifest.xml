@@ -26,6 +26,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPasswordGenerator">
         <activity
+            android:name=".activity.payment.PaymentOnlineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.payment.PaymentOfflineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.social.SocialOfflineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.social.SocialOnlineActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.browser.BrowserOfflineActivity"
             android:exported="false" />
         <activity

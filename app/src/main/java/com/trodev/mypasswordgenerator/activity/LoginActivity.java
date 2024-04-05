@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         if (pass.isEmpty()) {
-            passET.setError("Password must be 6 character");
+            passET.setError("Password must be 7 character");
             passET.requestFocus();
             return;
         }
