@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPasswordGenerator">
         <activity
+            android:name=".BrowserCreateActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.payment.PaymentOnlineActivity"
             android:exported="false" />
         <activity
@@ -42,15 +45,13 @@
             android:exported="false" />
         <activity
             android:name=".activity.browser.BrowserOnlineActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:parentActivityName=".activity.DashboardActivity" />
         <activity
             android:name=".activity.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".models.database.SavePassword"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignupActivity"

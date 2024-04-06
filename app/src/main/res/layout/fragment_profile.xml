@@ -53,8 +53,9 @@
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                android:layout_gravity="center"
                                 android:padding="5dp"
-                                android:src="@drawable/ic_person" />
+                                android:src="@drawable/user_pic" />
 
                         </androidx.cardview.widget.CardView>
 
@@ -62,7 +63,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:layout_weight="2"
                             android:orientation="vertical">
 
@@ -75,12 +76,53 @@
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
+                            <LinearLayout
+                                android:id="@+id/data_ll"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/email_TV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/space_grotesk_bold"
+                                    android:text="Email"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/pass_TV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/space_grotesk_bold"
+                                    android:text="Password"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
                             <TextView
+                                android:id="@+id/vp_tv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
-                                android:textColor="@color/black"
+                                android:text="View Details"
+                                android:textStyle="bold"
+                                android:textColor="@color/green"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/hd_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                android:text="Hide Details"
+                                android:textStyle="bold"
+                                android:textColor="@color/green"
                                 android:textSize="12sp" />
 
 
@@ -111,11 +153,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_export_import" />
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_export_import" />
 
 
                         <LinearLayout
@@ -138,7 +180,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
+                                android:text="View Details"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -170,11 +212,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_password" />
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_password" />
 
 
                         <LinearLayout
@@ -197,7 +239,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
+                                android:text="View Details"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -229,12 +271,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_feedback" />
-
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_feedback" />
 
 
                         <LinearLayout
@@ -257,7 +298,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
+                                android:text="View Details"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -289,11 +330,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_help" />
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_help" />
 
 
                         <LinearLayout
@@ -316,7 +357,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
+                                android:text="View Details"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -348,11 +389,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_notification" />
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_notification" />
 
 
                         <LinearLayout
@@ -375,7 +416,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="View Profile"
+                                android:text="View Details"
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 
@@ -408,11 +449,11 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="5dp"
-                                android:src="@drawable/ic_logout" />
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_logout" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -431,10 +472,11 @@
                                 android:textSize="18sp" />
 
                             <TextView
+                                android:id="@+id/logout_TV"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/space_grotesk_bold"
-                                android:text="Good bye user !!!"
+                                android:text="Good bye "
                                 android:textColor="@color/black"
                                 android:textSize="12sp" />
 

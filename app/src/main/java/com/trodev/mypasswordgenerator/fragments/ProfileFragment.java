@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,24 +26,34 @@ import com.trodev.mypasswordgenerator.activity.LoginActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
 
 public class ProfileFragment extends Fragment {
-
     CardView btn_logout;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
-    TextView nameET;
+    TextView nameET, vp_tv, email_TV, pass_TV, hd_tv, logout_TV;
+    LinearLayout data_ll;
 
     public ProfileFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
 
         btn_logout = view.findViewById(R.id.btn_logout);
+        nameET = view.findViewById(R.id.nameET);
+        vp_tv = view.findViewById(R.id.vp_tv);
+        hd_tv = view.findViewById(R.id.hd_tv);
+        data_ll = view.findViewById(R.id.data_ll);
+        email_TV = view.findViewById(R.id.email_TV);
+        pass_TV = view.findViewById(R.id.pass_TV);
+        logout_TV = view.findViewById(R.id.logout_TV);
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +65,27 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
 
-        nameET = view.findViewById(R.id.nameET);
+        data_ll.setVisibility(View.GONE);
+        hd_tv.setVisibility(View.GONE);
+        vp_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data_ll.setVisibility(view.VISIBLE);
+                hd_tv.setVisibility(View.VISIBLE);
+                vp_tv.setVisibility(View.GONE);
+
+            }
+        });
+
+        hd_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data_ll.setVisibility(view.GONE);
+                vp_tv.setVisibility(View.VISIBLE);
+                hd_tv.setVisibility(View.GONE);
+            }
+        });
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,9 +95,15 @@ public class ProfileFragment extends Fragment {
 
                     /*get user name from firebase database*/
                     String uname = userProfile.uname;
+                    String uemail = userProfile.email;
+                    String pass = userProfile.pass;
 
                     /*set name on profile*/
                     nameET.setText(uname);
+                    email_TV.setText("E-mail:- " + uemail);
+                    pass_TV.setText("Password:- " + pass);
+
+                    logout_TV.setText("Good bye "+ uname);
 
                     /*toast sms*/
                     Toast.makeText(getActivity(), uname + " your data found", Toast.LENGTH_SHORT).show();
@@ -83,7 +116,9 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        return view;
 
+
+
+        return view;
     }
 }

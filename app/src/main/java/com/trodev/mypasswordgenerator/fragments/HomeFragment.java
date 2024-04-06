@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.trodev.mypasswordgenerator.BrowserCreateActivity;
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOfflineActivity;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineActivity;
@@ -208,6 +209,7 @@ public class HomeFragment extends Fragment {
 
         LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
         LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
+        LinearLayout create = dialog.findViewById(R.id.create);
 
 
         layoutOnline.setOnClickListener(new View.OnClickListener() {
@@ -229,6 +231,18 @@ public class HomeFragment extends Fragment {
                 dialog.dismiss();
                 Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), BrowserOfflineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! create your credentials", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), BrowserCreateActivity.class);
                 startActivity(intent);
 
             }

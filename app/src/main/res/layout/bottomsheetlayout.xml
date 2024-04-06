@@ -29,6 +29,29 @@
         android:textStyle="bold"/>
 
     <LinearLayout
+        android:id="@+id/create"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_create"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:fontFamily="@font/space_grotesk_bold"
+            android:layout_marginStart="30dp"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/layouOnline"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -39,7 +62,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/online_icon"/>
+            android:src="@drawable/ic_online"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +85,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/offline_icon"/>
+            android:src="@drawable/ic_offline"/>
 
         <TextView
             android:layout_width="wrap_content"

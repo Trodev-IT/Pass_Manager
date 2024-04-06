@@ -57,14 +57,14 @@ public class DashboardActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
 
                 } else if (i == 1) {
-                    setTitle("Maker");
+                    setTitle("Locker Offline");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new MackerFragment());
                     fragmentTransaction.commit();
 
                 } else if (i == 2) {
-                    setTitle("Locker");
+                    setTitle("Locker Online");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new LockerFragment());
