@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.MackerFragment">
+    tools:context=".fragments.PassMakerFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,15 +50,6 @@
                 android:text="Copy"
                 android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/space_grotesk_bold"
-                android:text="Save"
-                android:textAllCaps="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -149,15 +140,6 @@
                 android:backgroundTint="@color/green"
                 android:text="Generate" />
 
-            <Button
-                android:id="@+id/btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/space_grotesk_bold"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/green"
-                android:text="Logout" />
         </LinearLayout>
 
     </LinearLayout>

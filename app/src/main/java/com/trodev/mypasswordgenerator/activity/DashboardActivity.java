@@ -2,29 +2,21 @@ package com.trodev.mypasswordgenerator.activity;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.navigation.NavigationView;
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.fragments.HomeFragment;
-import com.trodev.mypasswordgenerator.fragments.LockerFragment;
-import com.trodev.mypasswordgenerator.fragments.MackerFragment;
+import com.trodev.mypasswordgenerator.fragments.NotesFragment;
+import com.trodev.mypasswordgenerator.fragments.PassMakerFragment;
 import com.trodev.mypasswordgenerator.fragments.ProfileFragment;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
 public class DashboardActivity extends AppCompatActivity {
-
-    private DrawerLayout drawerLayout;
     SmoothBottomBar smoothBottomBar;
-    private ActionBarDrawerToggle toggle;
-    private NavigationView navigationView;
-    private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +49,17 @@ public class DashboardActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
 
                 } else if (i == 1) {
-                    setTitle("Locker Offline");
+                    setTitle("Pass Generator");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new MackerFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new PassMakerFragment());
                     fragmentTransaction.commit();
 
                 } else if (i == 2) {
-                    setTitle("Locker Online");
+                    setTitle("Personal Notes");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new LockerFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new NotesFragment());
                     fragmentTransaction.commit();
 
                 } else if (i == 3) {

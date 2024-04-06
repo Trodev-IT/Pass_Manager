@@ -1,6 +1,6 @@
-package com.trodev.mypasswordgenerator.models.generators;
+package com.trodev.mypasswordgenerator.password_generate_models.generators;
 
-import com.trodev.mypasswordgenerator.models.helpers.Helper;
+import com.trodev.mypasswordgenerator.password_generate_models.helpers.Helper;
 
 public class SpecialCharGenerator extends PasswordGenerator {
     private static final char[] SPECIAL_CHAR_ARRAY = "?./!%*$^+-)]@(['{}#<>".toCharArray();

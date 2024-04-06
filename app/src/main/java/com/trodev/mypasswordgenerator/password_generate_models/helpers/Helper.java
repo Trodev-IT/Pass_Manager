@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator.models.helpers;
+package com.trodev.mypasswordgenerator.password_generate_models.helpers;
 
 public class Helper {
     public static int randomVal(int size){

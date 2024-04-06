@@ -1,18 +1,13 @@
 package com.trodev.mypasswordgenerator.fragments;
 
-import static android.content.Context.CLIPBOARD_SERVICE;
-
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,29 +17,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.trodev.mypasswordgenerator.R;
-import com.trodev.mypasswordgenerator.activity.LoginActivity;
-import com.trodev.mypasswordgenerator.models.database.DatabaseHelper;
-import com.trodev.mypasswordgenerator.models.database.SavePassword;
-import com.trodev.mypasswordgenerator.models.generators.LowerCaseGenerator;
-import com.trodev.mypasswordgenerator.models.generators.NumericGenerator;
-import com.trodev.mypasswordgenerator.models.generators.PasswordGenerator;
-import com.trodev.mypasswordgenerator.models.generators.SpecialCharGenerator;
-import com.trodev.mypasswordgenerator.models.generators.UpperCaseGenerator;
-import com.trodev.mypasswordgenerator.models.password.Password;
+import com.trodev.mypasswordgenerator.password_generate_models.generators.LowerCaseGenerator;
+import com.trodev.mypasswordgenerator.password_generate_models.generators.NumericGenerator;
+import com.trodev.mypasswordgenerator.password_generate_models.generators.PasswordGenerator;
+import com.trodev.mypasswordgenerator.password_generate_models.generators.SpecialCharGenerator;
+import com.trodev.mypasswordgenerator.password_generate_models.generators.UpperCaseGenerator;
 
-import java.util.List;
-
-public class MackerFragment extends Fragment {
+public class PassMakerFragment extends Fragment {
 
     private EditText editPasswordSize;
     private TextView textPasswordGenerated, textErrorMessage;
     private CheckBox checkLower, checkUpper, checkSpecialChar, checkNumeric;
-    private Button btnGenerate, btnCopy, btnSave, btn_logout;
+    private Button btnGenerate, btnCopy;
 
-    public MackerFragment() {
-        // Required empty public constructor
+    public PassMakerFragment() {
+
     }
 
     @Override
@@ -62,23 +50,8 @@ public class MackerFragment extends Fragment {
         checkNumeric = view.findViewById(R.id.check_numeric);
         btnGenerate = view.findViewById(R.id.btn_generate);
         btnCopy = view.findViewById(R.id.btn_copy);
-        btnSave = view.findViewById(R.id.btn_save);
-        btn_logout = view.findViewById(R.id.btn_logout);
-
-        btnSave.setEnabled(false);
-
         clickListeners();
-
-        displaySavedPasswords();
-
         return view;
-
-    }
-
-    private void displaySavedPasswords() {
-        DatabaseHelper db = new DatabaseHelper(getActivity());
-        List<Password> passwordList = db.getPasswordList();
-        Log.e("PWD_LIST", passwordList.toString());
     }
 
     @SuppressLint("SetTextI18n")
@@ -105,21 +78,13 @@ public class MackerFragment extends Fragment {
                 }
                 String password = PasswordGenerator.generatePassword(passwordSize);
                 textPasswordGenerated.setText(password);
-                btnSave.setEnabled(true);
             }
         });
 
         btnCopy.setOnClickListener(view -> {
             ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
             clipboard.setPrimaryClip(ClipData.newPlainText("password", textPasswordGenerated.getText().toString()));
-            Toast.makeText(getContext(), "Password Copied", Toast.LENGTH_SHORT).show();
-        });
-
-        btnSave.setOnClickListener(view -> {
-            String genPwd = textPasswordGenerated.getText().toString();
-            Intent intent = new Intent(getContext(), SavePassword.class);
-            intent.putExtra("pwd", genPwd);
-            startActivity(intent);
+            Toast.makeText(getContext(), "Copy Successful", Toast.LENGTH_SHORT).show();
         });
 
     }

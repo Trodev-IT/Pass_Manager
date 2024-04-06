@@ -31,6 +31,17 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" ** you can make your personal pass card !! you can also save it offline picture"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -46,9 +57,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/space_grotesk_bold"
                             android:text="Website Name"
-                            android:layout_marginStart="5dp"
                             android:textColor="@color/black" />
 
 
@@ -70,11 +81,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:autoLink="web"
-                            android:textColor="@color/black"
                             android:layout_marginStart="5dp"
+                            android:autoLink="web"
                             android:fontFamily="@font/space_grotesk_bold"
-                            android:text="Website url" />
+                            android:text="Website url"
+                            android:textColor="@color/black" />
 
 
                     </LinearLayout>
@@ -95,9 +106,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/space_grotesk_bold"
                             android:text="Username &amp; email"
-                            android:layout_marginStart="5dp"
                             android:textColor="@color/black" />
 
 
@@ -119,9 +130,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/space_grotesk_bold"
                             android:text="Password"
-                            android:layout_marginStart="5dp"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
@@ -228,18 +239,36 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_btn"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:fontFamily="@font/space_grotesk_bold"
-                android:text="Save Password"
-                android:textAllCaps="false" />
+                android:orientation="horizontal"
+                android:weightSum="2">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/space_grotesk_bold"
+                    android:text="Save Online"
+                    android:textAllCaps="false" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_offline_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/space_grotesk_bold"
+                    android:text="Save Offline"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

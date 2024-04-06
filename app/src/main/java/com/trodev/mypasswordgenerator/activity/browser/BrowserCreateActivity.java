@@ -26,11 +26,8 @@ public class BrowserCreateActivity extends AppCompatActivity {
     TextInputEditText web_name_ET, web_url_ET, web_username_ET, web_pass_ET;
     TextView web_name_tv, web_url_tv, web_username_tv, web_pass_tv;
     MaterialButton save_btn;
-    RecyclerView rv;
     String web_name, web_link, web_uname, web_pass;
-    DatabaseReference reference, references;
-    ArrayList<BrowserOnlineModel> list;
-    BrowserOnlineAdapter adapter;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

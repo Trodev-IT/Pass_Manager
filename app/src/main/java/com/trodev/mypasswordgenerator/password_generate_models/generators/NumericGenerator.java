@@ -1,6 +1,6 @@
-package com.trodev.mypasswordgenerator.models.generators;
+package com.trodev.mypasswordgenerator.password_generate_models.generators;
 
-import com.trodev.mypasswordgenerator.models.helpers.Helper;
+import com.trodev.mypasswordgenerator.password_generate_models.helpers.Helper;
 
 public class NumericGenerator extends PasswordGenerator{
     private static final char CHAR_0 = '0';

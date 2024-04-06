@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,14 +37,18 @@ public class BrowserOnlineAdapter extends RecyclerView.Adapter<BrowserOnlineAdap
 
     @Override
     public void onBindViewHolder(@NonNull BrowserOnlineAdapter.MyViewHolder holder, int position) {
-
         BrowserOnlineModel model = list.get(position);
-
-        holder.web_name_tv.setText(model.getWeb_name());
+        holder.web_name_tv.setText("Website: "+model.getWeb_name());
         holder.web_url_tv.setText("https://www."+model.getWeb_url());
-        holder.web_username_tv.setText(model.getWeb_uname());
-        holder.web_pass_tv.setText(model.getWeb_password());
+        holder.web_username_tv.setText("Username or Email: "+model.getWeb_uname());
+        holder.web_pass_tv.setText("Password: "+model.getWeb_password());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "This website name is "+model.getWeb_name(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
