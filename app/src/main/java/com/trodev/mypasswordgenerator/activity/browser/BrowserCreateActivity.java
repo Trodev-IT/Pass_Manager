@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.activity.browser;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,11 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
@@ -19,6 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.trodev.mypasswordgenerator.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

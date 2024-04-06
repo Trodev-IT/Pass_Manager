@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPasswordGenerator">
         <activity
-            android:name=".BrowserCreateActivity"
+            android:name=".activity.browser.BrowserCreateActivity"
             android:exported="false" />
         <activity
             android:name=".activity.payment.PaymentOnlineActivity"

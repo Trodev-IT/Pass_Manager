@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.activity.browser;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.trodev.mypasswordgenerator.R;
 
 import java.util.ArrayList;
 

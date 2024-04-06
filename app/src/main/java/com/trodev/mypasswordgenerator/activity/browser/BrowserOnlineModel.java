@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.activity.browser;
 
 import android.view.View;
 import android.widget.Toast;
