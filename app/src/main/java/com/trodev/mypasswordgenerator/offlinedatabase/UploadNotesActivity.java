@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.offlinedatabase;
 
 import android.Manifest;
 import android.net.Uri;
@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.trodev.mypasswordgenerator.MyHelper;
+import com.trodev.mypasswordgenerator.R;
 
 import java.util.Date;
 
@@ -156,7 +156,7 @@ public class UploadNotesActivity extends AppCompatActivity {
 
             );
 
-            Toast.makeText(this, "Ticket added successful\nYour ticket serial is: " + id, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Notes added successful\nNotes serial: " + id, Toast.LENGTH_SHORT).show();
         }
 
 

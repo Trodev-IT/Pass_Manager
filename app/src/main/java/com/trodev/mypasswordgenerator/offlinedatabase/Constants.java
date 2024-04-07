@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.offlinedatabase;
 
 public class Constants {
 

@@ -1,10 +1,9 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.offlinedatabase;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.trodev.mypasswordgenerator.fragments.NotesFragment;
+import com.trodev.mypasswordgenerator.R;
 
-import java.security.Timestamp;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

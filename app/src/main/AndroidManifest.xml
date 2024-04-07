@@ -27,10 +27,10 @@
         android:theme="@style/Theme.MyPasswordGenerator">
 
         <activity
-            android:name=".UploadNotesActivity"
+            android:name=".offlinedatabase.UploadNotesActivity"
             android:exported="false" />
         <activity
-            android:name=".NotificationActivity"
+            android:name=".offlinedatabase.NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".activity.browser.BrowserCreateActivity"

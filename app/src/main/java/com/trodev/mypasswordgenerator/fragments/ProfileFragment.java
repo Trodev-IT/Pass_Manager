@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.trodev.mypasswordgenerator.NotificationActivity;
+import com.trodev.mypasswordgenerator.offlinedatabase.NotificationActivity;
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.LoginActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
@@ -35,7 +34,6 @@ public class ProfileFragment extends Fragment {
     TextView nameET, vp_tv, email_TV, pass_TV, hd_tv, logout_TV;
     LinearLayout data_ll;
     CardView notification_button;
-
     public ProfileFragment() {
     }
 

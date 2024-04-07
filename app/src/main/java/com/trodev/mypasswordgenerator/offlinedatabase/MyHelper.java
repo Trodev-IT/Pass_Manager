@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator;
+package com.trodev.mypasswordgenerator.offlinedatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
