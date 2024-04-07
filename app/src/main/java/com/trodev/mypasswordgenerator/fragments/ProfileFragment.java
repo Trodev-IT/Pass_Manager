@@ -1,16 +1,22 @@
 package com.trodev.mypasswordgenerator.fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.trodev.mypasswordgenerator.activity.NotificationActivity;
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.LoginActivity;
+import com.trodev.mypasswordgenerator.activity.payment.PaymentOnlineActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
 
 public class ProfileFragment extends Fragment {
@@ -115,7 +122,7 @@ public class ProfileFragment extends Fragment {
                     email_TV.setText("E-mail:- " + uemail);
                     pass_TV.setText("Password:- " + pass);
 
-                    logout_TV.setText("Good bye "+ uname);
+                    logout_TV.setText("Good bye " + uname);
 
                     /*toast sms*/
                     Toast.makeText(getActivity(), uname + " your data found", Toast.LENGTH_SHORT).show();
@@ -127,9 +134,6 @@ public class ProfileFragment extends Fragment {
                 Toast.makeText(getActivity(), "something went wrong!", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
 
         return view;
     }

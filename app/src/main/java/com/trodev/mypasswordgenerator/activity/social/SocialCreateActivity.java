@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator.activity.browser;
+package com.trodev.mypasswordgenerator.activity.social;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.trodev.mypasswordgenerator.R;
+import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -50,7 +51,7 @@ public class SocialCreateActivity extends AppCompatActivity {
         soc_username_ET = findViewById(R.id.soc_username_ET);
         soc_pass_ET = findViewById(R.id.soc_pass_ET);
 
-        save_btn = findViewById(R.id.save_btn);
+        save_btn = findViewById(R.id.save_soc_online_btn);
 
         // Set up a text changed listener on the EditText
         soc_name_ET.addTextChangedListener(new TextWatcher() {
@@ -178,10 +179,10 @@ public class SocialCreateActivity extends AppCompatActivity {
             String Key = reference.push().getKey();
 
             if (Key != null) {
-                BrowserOnlineModel browserOnlineModel = new BrowserOnlineModel(soc_name, soc_link, soc_uname, soc_pass, date, time, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                SocialOnlineModel socialOnlineModel = new SocialOnlineModel(soc_name, soc_link, soc_uname, soc_pass, date, time, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                 /*these data save on new uid and also store user id*/
-                reference.child(Key).setValue(browserOnlineModel);
+                reference.child(Key).setValue(socialOnlineModel);
 
                 /*these data save on user id*/
                 // reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(browserOnlineModel);

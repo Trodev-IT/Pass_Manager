@@ -32,6 +32,7 @@ import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineActivity;
 import com.trodev.mypasswordgenerator.activity.payment.PaymentOnlineActivity;
 import com.trodev.mypasswordgenerator.activity.NotificationActivity;
+import com.trodev.mypasswordgenerator.activity.social.SocialCreateActivity;
 import com.trodev.mypasswordgenerator.activity.social.SocialOnlineActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
 
@@ -150,6 +151,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), PaymentOnlineActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -177,6 +190,16 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), SocialOnlineActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), SocialCreateActivity.class);
+                startActivity(intent);
             }
         });
 

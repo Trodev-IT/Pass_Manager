@@ -32,6 +32,8 @@ public class BrowserOnlineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser_online);
+
+
         getSupportActionBar().setTitle("Database History");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
