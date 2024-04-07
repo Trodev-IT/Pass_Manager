@@ -1,4 +1,4 @@
-package com.trodev.mypasswordgenerator.activity.browser;
+package com.trodev.mypasswordgenerator.activity;
 
 import android.os.Bundle;
 
@@ -10,12 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.trodev.mypasswordgenerator.R;
 
-public class BrowserOfflineActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browser_offline);
+        setContentView(R.layout.activity_notification);
 
+        getSupportActionBar().setTitle("Notification");
     }
 }

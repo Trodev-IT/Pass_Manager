@@ -28,12 +28,11 @@ public class BrowserOnlineActivity extends AppCompatActivity {
     ArrayList<BrowserOnlineModel> list;
     BrowserOnlineAdapter adapter;
     LottieAnimationView animationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser_online);
-        getSupportActionBar().setTitle("Online Database History");
+        getSupportActionBar().setTitle("Database History");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         rv = findViewById(R.id.rv);

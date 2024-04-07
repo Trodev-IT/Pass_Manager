@@ -30,8 +30,10 @@
             android:name=".offlinedatabase.UploadNotesActivity"
             android:exported="false" />
         <activity
-            android:name=".offlinedatabase.NotificationActivity"
-            android:exported="false" />
+            android:name=".activity.NotificationActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.DashboardActivity"
+            />
         <activity
             android:name=".activity.browser.BrowserCreateActivity"
             android:exported="true"

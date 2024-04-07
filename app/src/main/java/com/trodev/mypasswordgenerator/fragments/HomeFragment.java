@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,17 +29,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserCreateActivity;
 import com.trodev.mypasswordgenerator.R;
-import com.trodev.mypasswordgenerator.activity.browser.BrowserOfflineActivity;
 import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineActivity;
-import com.trodev.mypasswordgenerator.activity.payment.PaymentOfflineActivity;
 import com.trodev.mypasswordgenerator.activity.payment.PaymentOnlineActivity;
+import com.trodev.mypasswordgenerator.activity.NotificationActivity;
+import com.trodev.mypasswordgenerator.activity.social.SocialOnlineActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
 
 public class HomeFragment extends Fragment {
 
     CardView browser_btn, social_btn, payment_btn;
     TextView profile_name_tv;
-
+    ImageView notification_IV;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -59,6 +60,17 @@ public class HomeFragment extends Fragment {
         browser_btn = view.findViewById(R.id.browser_btn);
         social_btn = view.findViewById(R.id.social_btn);
         payment_btn = view.findViewById(R.id.payment_btn);
+        notification_IV = view.findViewById(R.id.notification_IV);
+
+
+        notification_IV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), NotificationActivity.class));
+            }
+        });
+
+
         browser_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,7 +135,7 @@ public class HomeFragment extends Fragment {
         dialog.setContentView(R.layout.bottomsheetlayout);
 
         LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
-        LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
+        LinearLayout create = dialog.findViewById(R.id.create);
 
 
         layoutOnline.setOnClickListener(new View.OnClickListener() {
@@ -133,18 +145,6 @@ public class HomeFragment extends Fragment {
                 dialog.dismiss();
                 Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), PaymentOnlineActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        layoutOffline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), PaymentOfflineActivity.class);
                 startActivity(intent);
 
             }
@@ -165,7 +165,7 @@ public class HomeFragment extends Fragment {
         dialog.setContentView(R.layout.bottomsheetlayout);
 
         LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
-        LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
+        LinearLayout create = dialog.findViewById(R.id.create);
 
 
         layoutOnline.setOnClickListener(new View.OnClickListener() {
@@ -174,19 +174,7 @@ public class HomeFragment extends Fragment {
 
                 dialog.dismiss();
                 Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), BrowserOnlineActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        layoutOffline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), BrowserOfflineActivity.class);
+                Intent intent = new Intent(getContext(), SocialOnlineActivity.class);
                 startActivity(intent);
 
             }
@@ -208,7 +196,6 @@ public class HomeFragment extends Fragment {
         dialog.setContentView(R.layout.bottomsheetlayout);
 
         LinearLayout layoutOnline = dialog.findViewById(R.id.layouOnline);
-        LinearLayout layoutOffline = dialog.findViewById(R.id.layoutOffline);
         LinearLayout create = dialog.findViewById(R.id.create);
 
 
@@ -219,18 +206,6 @@ public class HomeFragment extends Fragment {
                 dialog.dismiss();
                 Toast.makeText(getContext(), "welcome! online section", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), BrowserOnlineActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        layoutOffline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(getContext(), "welcome! offline section", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), BrowserOfflineActivity.class);
                 startActivity(intent);
 
             }

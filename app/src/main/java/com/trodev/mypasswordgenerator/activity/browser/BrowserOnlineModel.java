@@ -16,9 +16,7 @@ import com.trodev.mypasswordgenerator.activity.browser.BrowserOnlineActivity;
 import java.util.ArrayList;
 
 public class BrowserOnlineModel {
-
     String web_name, web_url, web_uname, web_password,  date, time, uid;
-
 
     public BrowserOnlineModel() {
     }
