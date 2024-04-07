@@ -25,6 +25,10 @@
         android:roundIcon="@drawable/pass_icn"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPasswordGenerator">
+
+        <activity
+            android:name=".UploadNotesActivity"
+            android:exported="false" />
         <activity
             android:name=".NotificationActivity"
             android:exported="false" />
