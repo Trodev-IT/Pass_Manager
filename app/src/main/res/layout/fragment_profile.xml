@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragments.ProfileFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_image"
+        android:alpha="0.9"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -149,7 +158,9 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="5dp"
-                            android:src="@drawable/ic_password" />
+                            android:layout_gravity="center"
+                            app:tint="@color/green"
+                            android:src="@drawable/ic_lock" />
 
 
                         <LinearLayout
@@ -200,6 +211,57 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="5dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_password" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                android:text="Set Lock"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <Switch
+                                android:id="@+id/mySwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:padding="5dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_feedback" />
 
 
@@ -259,6 +321,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="5dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_help" />
 
 
@@ -319,6 +382,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="5dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_notification" />
 
 
@@ -379,6 +443,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="5dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/ic_logout" />
 
                         <LinearLayout
@@ -426,4 +491,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

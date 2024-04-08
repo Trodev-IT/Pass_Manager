@@ -8,6 +8,15 @@
     android:orientation="vertical"
     tools:context=".activity.browser.BrowserOnlineActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_image"
+        android:alpha="0.2"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"

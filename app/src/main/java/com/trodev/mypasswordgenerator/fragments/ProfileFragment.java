@@ -41,6 +41,10 @@ public class ProfileFragment extends Fragment {
     TextView nameET, vp_tv, email_TV, pass_TV, hd_tv, logout_TV;
     LinearLayout data_ll;
     CardView notification_button;
+
+    private Switch mySwitch;
+    private SharedPreferences sharedPreferences;
+    private static final String SWITCH_STATE = "switch_state";
     public ProfileFragment() {
     }
 
@@ -135,6 +139,54 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+//        mySwitch = view.findViewById(R.id.mySwitch);
+//        sharedPreferences = getActivity().getSharedPreferences("my_prefs", MODE_PRIVATE);
+//
+//        // Load the saved switch state (if any)
+//        boolean switchState = sharedPreferences.getBoolean(SWITCH_STATE, false);
+//        mySwitch.setChecked(switchState);
+//
+//        // Send switch state to Activity2
+//        Intent intent = new Intent(getActivity(), NotificationActivity.class);
+//        PaymentOnlineActivity.SwitchState state = new PaymentOnlineActivity.SwitchState(switchState);
+//        intent.putExtra("switch_state", state);
+//        startActivity(intent);
+
         return view;
     }
+
+    // Parcelable class to hold switch state
+//    public static class SwitchState implements Parcelable {
+//        public final boolean isChecked;
+//
+//        public SwitchState(boolean isChecked) {
+//            this.isChecked = isChecked;
+//        }
+//
+//        protected SwitchState(Parcel in) {
+//            isChecked = in.readByte() != 0;
+//        }
+//
+//        public static final Parcelable.Creator<SwitchState> CREATOR = new Creator<SwitchState>() {
+//            @Override
+//            public SwitchState createFromParcel(Parcel in) {
+//                return new SwitchState(in);
+//            }
+//
+//            @Override
+//            public SwitchState[] newArray(int size) {
+//                return new SwitchState[size];
+//            }
+//        };
+//
+//        @Override
+//        public int describeContents() {
+//            return 0;
+//        }
+//
+//        @Override
+//        public void writeToParcel(Parcel dest, int flags) {
+//            dest.writeByte((byte) (isChecked ? 1 : 0));
+//        }
+//    }
 }

@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".fragments.NotesFragment">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_image"
+        android:alpha="0.9"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recordRv"
         android:layout_width="match_parent"
