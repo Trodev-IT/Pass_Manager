@@ -10,21 +10,21 @@
     android:layout_height="match_parent"
     tools:context=".activity.NotificationActivity">
 
-    <TextView
-        android:id="@+id/switchStateText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Result:- "
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/switchStateText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Result:- "-->
+<!--        />-->
 
-    <TextView
-        android:id="@+id/Tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Result"
-        android:visibility="gone"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/Tv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Result"-->
+<!--        android:visibility="gone"-->
+<!--        />-->
 
 </LinearLayout>

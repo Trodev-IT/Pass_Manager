@@ -1,7 +1,5 @@
 package com.trodev.mypasswordgenerator.fragments;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,8 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.trodev.mypasswordgenerator.activity.NotificationActivity;
 import com.trodev.mypasswordgenerator.R;
 import com.trodev.mypasswordgenerator.activity.LoginActivity;
-import com.trodev.mypasswordgenerator.activity.payment.PaymentOnlineActivity;
 import com.trodev.mypasswordgenerator.onlinedb.User;
 
 public class ProfileFragment extends Fragment {
@@ -40,8 +35,7 @@ public class ProfileFragment extends Fragment {
     private String userID;
     TextView nameET, vp_tv, email_TV, pass_TV, hd_tv, logout_TV;
     LinearLayout data_ll;
-    CardView notification_button;
-
+    CardView notification_button, Feedback_btn;
     private Switch mySwitch;
     private SharedPreferences sharedPreferences;
     private static final String SWITCH_STATE = "switch_state";
@@ -69,6 +63,14 @@ public class ProfileFragment extends Fragment {
 
         /*Card view design*/
         notification_button = view.findViewById(R.id.notification_button);
+        Feedback_btn = view.findViewById(R.id.Feedback_btn);
+
+        Feedback_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // startActivity(new Intent(getActivity(), ProgressActivity.class));
+            }
+        });
 
         notification_button.setOnClickListener(new View.OnClickListener() {
             @Override
